@@ -1,0 +1,108 @@
+@media (max-width: 55rem) {
+  body {
+    padding: 1.6rem;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .guidelines {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: translate(0%, 0%);
+  }
+  .logo {
+    order: -1;
+    display: block;
+  }
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto repeat(7, 15rem) auto;
+    gap: 3rem;
+  }
+  .movements {
+    grid-row: 5 / span 3;
+  }
+  .summary {
+    grid-row: -3;
+  }
+  .operation--loan {
+    grid-row: 4 / span 1;
+  }
+  .operation--close {
+    grid-row: 3;
+  }
+  .logout-timer {
+    grid-row: -2;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: -4rem;
+    margin-left: -2rem;
+    padding-bottom: 3.2rem;
+  }
+  .balance {
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 29rem) {
+  .balance {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .movements__row {
+    padding: 2.15rem 2rem;
+  }
+  .operation {
+    padding: 2rem 2rem;
+  }
+  .summary {
+    /* grid-row: 5/6; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: -1rem;
+    justify-content: center;
+    align-items: center;
+    /* justify-items: center; */
+  }
+  .summary__label {
+    font-size: 1.5rem;
+    justify-self: center;
+    margin-right: 1rem;
+  }
+  .summary__value {
+    margin-right: 0rem;
+  }
+  .summary__value--in,
+  .summary__value--interest {
+    margin-right: 1rem;
+  }
+  .logout-timer {
+    font-size: 1.5rem;
+    margin-top: -2rem;
+  }
+  .btn--sort {
+    grid-column: 3/5;
+    grid-row: 2/3;
+    justify-self: center;
+    text-align: center;
+    border: none;
+    /* margin-right: -3.6rem; */
+    background: #495057;
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    color: white;
+  }
+}
