@@ -43,7 +43,7 @@
     text-align: center;
     margin-top: -4rem;
     margin-left: -2rem;
-    padding-bottom: 3.2rem;
+    /* padding-bottom: 3.2rem; */
   }
   .balance {
     grid-row: 1;

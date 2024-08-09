@@ -250,11 +250,13 @@ const updateUI = function (currentAccount) {
 
 const startLogOutTimer = function () {
   // Set time to 5 minutes
-  let time = 4000;
+  let time = 300;
   // Call the timer every second
   const tick = () => {
     const min = String(Math.trunc(time / 60)).padStart(2, 0);
     const sec = String(time % 60).padStart(2, 0);
+
+    console.log(min, sec);
 
     // in each call , print the remaining time to UI
     labelTimer.textContent = `${min}:${sec}`;
@@ -264,15 +266,16 @@ const startLogOutTimer = function () {
       clearInterval(timer);
       labelWelcome.textContent = `Log in to get started`;
       containerApp.style.opacity = "0";
+      guidelines.style.display = "block";
     }
 
     // Decrese is
     time--;
   };
   tick();
-  // const timer = setInterval(tick, 1000);
+  const timer = setInterval(tick, 1000);
 
-  // return timer;
+  return timer;
 };
 
 ///////////////////////////////////////////////
