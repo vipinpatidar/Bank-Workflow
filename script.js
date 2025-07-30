@@ -140,20 +140,29 @@ const formatCurrency = function (value, locale, currency) {
 
 const displayMovements = function (account, sort = false) {
   containerMovements.innerHTML = "";
+
+  const movObject = account.movements.map((mov, i) => {
+    return {
+      mov: mov,
+      date: account.movementsDates[i],
+    };
+  });
+
+  // console.log(movObject);
   // sorting movements
   const sortMovements = sort
-    ? account.movements.slice().sort((a, b) => a - b)
-    : account.movements;
+    ? movObject.slice().sort((a, b) => a.mov - b.mov)
+    : movObject;
 
   sortMovements.forEach((movement, i) => {
-    const type = movement > 0 ? "deposit" : "withdrawal";
+    const type = movement.mov > 0 ? "deposit" : "withdrawal";
 
-    const date = new Date(account.movementsDates[i]);
+    const date = new Date(movement.date);
     const displayDate = formatMovementDate(date, account.locale);
 
     // formating currency accourding to countries
     const formateMov = formatCurrency(
-      movement,
+      movement.mov,
       account.locale,
       account.currency
     );
